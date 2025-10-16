@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recupera Fácil - Reembolso de Golpes Online</title>
+    <style>
+        /* Reset de estilos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #111;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: #1abc9c;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Container Principal */
+        .container {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        /* Título Principal */
+        .title {
+            font-size: 36px;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        /* Descrição */
+        .description {
+            font-size: 18px;
+            color: #ddd;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Botão */
+        .button-container {
+            margin-top: 30px;
+        }
+
+        .prosseguir-btn {
+            padding: 15px 40px;
+            font-size: 18px;
+            background-color: #1abc9c;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .prosseguir-btn:hover {
+            background-color: #16a085;
+            transform: translateY(-5px);
+        }
+
+        /* Vídeo Container */
+        .video-container {
+            margin-top: 50px;
+            max-width: 100%;
+            display: block;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 400px;
+        }
+
+        /* Biografia do Advogado */
+        .biography-container {
+            margin-top: 70px;
+            text-align: center;
+        }
+
+        .biography-container img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 4px solid #1abc9c;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .bio-text {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 18px;
+            color: #ddd;
+            line-height: 1.8;
+        }
+
+        .bio-text h3 {
+            font-size: 26px;
+            color: #1abc9c;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        /* Depoimentos */
+        .testimonials-container {
+            margin-top: 70px;
+        }
+
+        .testimonial {
+            background-color: #333;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            color: #ddd;
+        }
+
+        .testimonial h4 {
+            font-size: 22px;
+            color: #1abc9c;
+            margin-bottom: 10px;
+        }
+
+        .testimonial p {
+            font-size: 16px;
+            font-style: italic;
+        }
+
+        .testimonial .customer-name {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #1abc9c;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        footer p {
+            font-size: 16px;
+            color: #fff;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Seção de Perguntas Frequentes */
+        .faq-container {
+            margin-top: 70px;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-item {
+            margin: 20px 0;
+            color: #fff;
+        }
+
+        .faq-item h4 {
+            font-size: 20px;
+            color: #1abc9c;
+            margin-bottom: 10px;
+        }
+
+        .faq-item p {
+            font-size: 16px;
+            color: #ddd;
+        }
+
+        /* Botão WhatsApp */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            font-size: 24px;
+            padding: 15px;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+            transform: translateY(-5px);
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .title {
+                font-size: 30px;
+            }
+
+            .description {
+                font-size: 16px;
+            }
+
+            .bio-text {
+                font-size: 16px;
+            }
+
+            .prosseguir-btn {
+                font-size: 16px;
+                padding: 12px 35px;
+            }
+
+            .whatsapp-btn {
+                font-size: 20px;
+                padding: 12px;
+            }
+        }
+    </style>
+    <script>
+        // Função para redirecionar após 3 segundos
+        function redirectWithDelay() {
+            setTimeout(function() {
+                window.location.href = "https://siteoficial-url.github.io/recupera-facil/";
+            }, 3000); // Delay de 3 segundos
+        }
+    </script>
+</head>
+<body>
+
+<header>
+    Recupera Fácil - Reembolso de Golpes Online
+</header>
+
+<div class="container">
+    <div class="title">Como Funciona o Recupera Fácil?</div>
+    <div class="description">
+        A Recupera Fácil é uma plataforma inovadora dedicada a ajudar você a reaver valores perdidos ou errados devido a fraudes e golpes online. Nossa missão é tornar a recuperação de dinheiro fácil, rápida e segura. Conte conosco para resolver sua situação e recuperar o que é seu por direito.
+    </div>
+
+    <!-- Vídeo de explicação -->
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/VWt3Vl8rHto" title="Vídeo do Recuperação Rápida" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <div class="button-container">
+        <!-- Botão que chama a função para redirecionar após o delay -->
+        <button class="prosseguir-btn" onclick="redirectWithDelay()">Prosseguir com a consulta</button>
+    </div>
+</div>
+
+<!-- Biografia do Advogado -->
+<div class="biography-container">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXxawyjBewxSCVYHfZ0BvqbSwRaaTFO92_mapvxPsDyhPu4x4T_2xD8co&s=10" alt="Dr. Marcelo Cabral">
+    <div class="bio-text">
+        <h3>Dr. Marcelo Cabral - Especialista em Recuperação de Valores</h3>
+        <p>Com mais de 15 anos de experiência em direito do consumidor, o Dr. Marcelo Cabral lidera uma equipe de especialistas dedicados a ajudar vítimas de fraudes a recuperar valores de forma eficiente. Ele é o idealizador da plataforma Recupera Fácil, que tem transformado a vida de milhares de clientes.</p>
+    </div>
+</div>
+
+<!-- Depoimentos de Clientes -->
+<div class="testimonials-container">
+    <div class="testimonial">
+        <h4>Maria Silva</h4>
+        <p>"Eu estava desesperada após perder meu dinheiro em um golpe, mas o Recupera Facil e o Dr Marcelo e equipe me ajudou a recuperar tudo rapidamente. Um serviço de confiança!"</p>
+        <div class="customer-name">Cliente Satisfeita</div>
+    </div>
+
+    <div class="testimonial">
+        <h4>João Oliveira</h4>
+        <p>"Estava cético, mas a plataforma foi rápida e eficiente. Consegui reaver meu dinheiro de forma simples e segura. Muito grato!"</p>
+        <div class="customer-name">Cliente Satisfeito</div>
+    </div>
+
+    <div class="testimonial">
+        <h4>Ana Costa</h4>
+        <p>"O serviço foi excelente! Recuperaram o valor perdido de forma simples e com total transparência. Não poderia estar mais satisfeita com a solução." </p>
+        <div class="customer-name">Cliente Satisfeita</div>
+    </div>
+
+    <div class="testimonial">
+        <h4>Lucas Almeida</h4>
+        <p>"Eu estava muito preocupado, mas a equipe do Recupera Fácil foi extremamente profissional e ágil. Consegui recuperar o valor que pensei que nunca veria de volta." </p>
+        <div class="customer-name">Cliente Satisfeito</div>
+    </div>
+</div>
+
+<!-- Perguntas Frequentes -->
+<div class="faq-container">
+    <div class="faq-item">
+        <h4>1. Como funciona o serviço?</h4>
+        <p>O serviço do Recupera Facil ajuda você a recuperar valores perdidos devido a fraudes online. Nossa plataforma realiza a análise do seu caso e oferece suporte para garantir o reembolso de seu dinheiro.</p>
+    </div>
+
+    <div class="faq-item">
+        <h4>2. O que devo fazer se fui vítima de um golpe online?</h4>
+        <p>Se você acredita que foi vítima de um golpe online, forneça as informações sobre a transação e entre em contato conosco. Nossa equipe iniciará o processo de recuperação do seu valor o mais rápido possível.</p>
+    </div>
+
+    <div class="faq-item">
+        <h4>3. Qual o prazo para recuperação?</h4>
+        <p>O prazo para recuperação varia, mas geralmente pode ser de 7 a 45 dias. Nossa equipe trabalha para acelerar o processo e garantir que você tenha seu reembolso o mais breve possível.</p>
+    </div>
+</div>
+
+<!-- Rodapé -->
+<footer>
+    <p>&copy; 2025 Recupera Fácil - Todos os direitos reservados.</p>
+    <p><a href="https://www.recuperacaorapida.com/termos" target="_blank">Termos de Uso</a> | <a href="https://www.recuperacaorapida.com/politica" target="_blank">Política de Privacidade</a></p>
+</footer>
+
+<!-- Botão WhatsApp -->
+<a href="https://wa.link/t9cggt" class="whatsapp-btn" target="_blank">
+    &#x1F4AC; <!-- Ícone de mensagem do WhatsApp -->
+</a>
+
+</body>
+</html>
